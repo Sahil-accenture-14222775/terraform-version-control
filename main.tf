@@ -33,4 +33,4 @@ resource "aws_iam_user_policy" "s3_read_policy" {
   policy = var.policy_json
 }
 
-# Project 6: Version Control Infrastructure update
+# Project 11: Infra Changes with Branching policy
