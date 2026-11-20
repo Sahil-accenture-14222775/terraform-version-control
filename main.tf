@@ -32,3 +32,5 @@ resource "aws_iam_user_policy" "s3_read_policy" {
   user   = aws_iam_user.project_user.name
   policy = var.policy_json
 }
+
+# Project 6: Version Control Infrastructure update
