@@ -1,10 +1,13 @@
-# Terraform Version Control
+# Project 12: Infrastructure CI Trigger
 
-![Terraform CI](https://github.com/Sahil-accenture-14222775/terraform-version-control/actions/workflows/terraform-ci.yml/badge.svg)
+## Goal
+Automate Terraform Plan validation using GitHub Actions.
 
-Terraform Infrastructure as Code project with automated CI validation using GitHub Actions.
+## Tasks
+- Run Terraform Plan in pipeline.
+- Upload Terraform Plan artifact.
 
-## CI Checks
-- Terraform Format
-- Terraform Init
-- Terraform Validate
+## Tools
+- Terraform
+- GitHub Actions
+- Git

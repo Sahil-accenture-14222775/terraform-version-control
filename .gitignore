@@ -1,5 +1,6 @@
 .terraform/
 *.tfstate
 *.tfstate.*
-*.tfvars
 *.tfplan
+crash.log
+project12-output.txt

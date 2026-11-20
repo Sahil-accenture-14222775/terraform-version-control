@@ -1,36 +1,15 @@
-# Create IAM User
-resource "aws_iam_user" "s3_reader" {
-  name = var.iam_username
+resource "local_file" "project_config" {
+  filename = "${path.module}/project12-output.txt"
 
-  tags = {
-    Name        = var.iam_username
-    Environment = "Capstone"
-    Project     = "Project-4"
-  }
+  content = <<-EOT
+    Project: ${var.project_name}
+    Environment: ${var.environment}
+    Managed by: Terraform
+  EOT
 }
 
-# Attach S3 Read Policy
-resource "aws_iam_user_policy" "s3_read_access" {
-  name = "S3ReadOnlyPolicy"
-  user = aws_iam_user.s3_reader.name
+resource "local_file" "project_info" {
+  filename = "${path.module}/project-info.txt"
 
-  policy = replace(
-    var.s3_read_policy,
-    "YOUR_BUCKET_NAME",
-    var.s3_bucket_name
-  )
+  content = "Project: ${var.project_name}\nTerraform CI Plan Successful"
 }
-
-
-
-resource "aws_iam_user" "project_user" {
-  name = var.iam_username
-}
-
-resource "aws_iam_user_policy" "s3_read_policy" {
-  name   = "S3ReadOnlyPolicy"
-  user   = aws_iam_user.project_user.name
-  policy = var.policy_json
-}
-
-# Project 11: Infra Changes with Branching policy

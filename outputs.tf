@@ -1,11 +1,11 @@
-output "iam_username" {
-  value = aws_iam_user.project_user.name
+output "project_name" {
+  value = var.project_name
 }
 
-output "iam_user_arn" {
-  value = aws_iam_user.s3_reader.arn
+output "file_path" {
+  value = local_file.project_config.filename
 }
 
-output "attached_policy_name" {
-  value = aws_iam_user_policy.s3_read_access.name
+output "project_file" {
+  value = local_file.project_info.filename
 }
